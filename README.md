@@ -15,7 +15,7 @@ This Is The Repo For Portfolio Website.
 <center>**Image Of About**</center>
 
 ![Image Of Contact](assets/Images/Contact.png)
-<center>**Image Of Contact Page**</center>>
+<center>**Image Of Contact Page**</center>
 
 **WEB HOSTING SERVICE :-**  [000WebHost](https://000webhost.com)<br>
 [Github Pages](https://github.com)
