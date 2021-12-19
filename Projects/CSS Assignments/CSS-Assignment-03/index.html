@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="assets/Css_reset/normalize.css">
+    <meta charset="UTF-8">
+    <title>Css-Assignment-03</title>
+    <style>
+        body>main>section{
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            margin: auto;
+            width: 300px;
+            height: 300px;
+            border: 12px solid peachpuff;
+            border-radius: 100%;
+            z-index: 2;
+
+        }
+        body>main>section>section{
+            position: absolute;
+            border: 20px solid red;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            margin: auto;
+            border-radius: 100%;
+        }
+        body>section:nth-child(2){
+            position: absolute;
+            background-color: darkblue;
+            width: 300px;
+            height: 300px;
+            border-radius: 100%;
+            top: 0;
+            right: 0;
+            left: 0;
+            bottom:0;
+            margin: auto;
+
+        }
+        body>section:nth-child(2)>div{
+            text-align: center;
+            padding: 120px 0 128px;
+            font-size: 50px;
+            font-family: 'Lobster', cursive;
+            color: white;
+        }
+        body div{
+            margin-bottom: 100vh;
+        }
+        body>section:nth-child(5) {
+            position: relative;
+            background-color: lightpink;
+            width: 300px;
+            height: 300px;
+            border-radius: 100%;
+            top: 0;
+            right: 0;
+            left: 0;
+            bottom: 0;
+            margin: auto;
+        }
+        body>section:nth-child(5)>div{
+            text-align: center;
+            padding: 120px 0 128px;
+            font-size: 30px;
+            font-family: 'Lobster', cursive;
+            color: white;
+        }
+        body>section:nth-child(8) {
+            position: relative;
+            background-color: green;
+            width: 300px;
+            height: 300px;
+            border-radius: 100%;
+            top: 0;
+            right: 0;
+            left: 0;
+            bottom: 0;
+            margin: auto;
+        }
+        body>section:nth-child(8)>div{
+            text-align: center;
+            padding: 100px 0 128px;
+            font-size: 30px;
+            font-family: 'Lobster', cursive;
+            color: white;
+        }
+        body>section:nth-child(9){
+            margin-bottom: 30vh;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <section>
+            <section></section>
+        </section>
+    </main>
+    <section><div>Hello</div></section>
+    <div></div>
+    <div></div>
+    <section><div>Welcome To</div></section>
+    <div></div>
+    <div></div>
+    <section><div>Institute Of Software Engineering</div></section>
+    <section></section>
+</body>
+</html>
