@@ -4,6 +4,11 @@ This Is The Repo For Portfolio Website.
 # Site Development Progress With Hard-Coding
 2021/11/25 Initial Commit As My-Profile
 
+[SiteMap](https://www.gloomaps.com/XejZQFmrGt)
+[Wireframe](https://www.figma.com/file/c5nMqleAd2akWXqscmVVjx/Wireframe?node-id=0%3A1)
+[Mokup](https://www.figma.com/file/mJ9AqYBSGTVI3d8KGpcmxa/MoKup?node-id=0%3A1)
+
+
 # <u>Site Overview.</u>
 
 **This Is Just A Basic Overview Only**
