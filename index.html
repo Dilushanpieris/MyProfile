@@ -3,10 +3,106 @@
 <head>
     <meta charset="UTF-8">
     <title>PortFolio Of Dilushanpieris</title>
+    <link rel="stylesheet" href="assets/Css_reset/normalize.css">
+    <style>
+        /*Scroll*/
+        html{
+            scroll-behavior: smooth;
+        }
+        /*Start*/
 
+        body > section:nth-child(1) {
+            position: relative;
+            border: 1px solid red;
+            height: 1000px;
+        }
+
+        body > section:nth-child(2) {
+            border: 1px solid grey;
+            height: 700px;
+        }
+
+        body > section:nth-child(3) {
+            border: 1px solid green;
+            height: 650px;
+        }
+
+        body > section:nth-child(4) {
+            border: 1px solid blue;
+            height: 300px;
+        }
+
+        body > section:nth-child(5) {
+            border: 1px solid rebeccapurple;
+            height: 600px;
+        }
+
+        /*End Of Main CSS*/
+        /*Main bar TOP*/
+        body > section:nth-child(1) > div:nth-child(1) {
+            height: 40px;
+            background-color: lightgrey;
+            border: 1px solid yellow;
+
+        }
+
+        /*Top Bar Items*/
+        body > section:nth-child(1) > div>a{
+            position: absolute;
+            top: 1.8vh;
+            bottom: 0;
+            color: black;
+            text-decoration: none;
+            font-family: 'Lobster', cursive;
+        }
+        body > section:nth-child(1) > div > a:nth-child(1) {
+            right: 19.5vw;
+        }
+
+        body > section:nth-child(1) > div > a:nth-child(2) {
+            right: 16vw;
+        }
+
+        body > section:nth-child(1) > div > a:nth-child(3) {
+            right: 11.5vw;
+        }
+
+        body > section:nth-child(1) > div > a:nth-child(4) {
+            right: 7vw;
+        }
+
+        body > section:nth-child(1) > div > a:nth-child(5) {
+            right: 2.5vw;
+        }
+    /*    End Of Top DIV*/
+        body>section:nth-child(1)>div:nth-child(2){
+            border: 2px solid darkgreen;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+            position: absolute;
+            margin-top: 40px;
+        }
+
+
+    </style>
 </head>
 <body>
-<h1>Welcome To My Page</h1>
-
+<section id="Home">
+    <div>
+        <a href="#Home">Home</a>
+        <a href="#About">About</a>
+        <a href="#Services">Services</a>
+        <a href="#Portfolio">Portfolio</a>
+        <a href="#Contact">Contact</a>
+    </div>
+    <div></div>
+</section>
+<section id="About"></section>
+<section id="Services"></section>
+<section id="Portfolio"></section>
+<section id="Contact"></section>
 </body>
 </html>
