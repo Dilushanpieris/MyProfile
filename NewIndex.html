@@ -3,10 +3,184 @@
 <head>
     <meta charset="UTF-8">
     <title>Myprofile Index</title>
+    <link rel="stylesheet" href="assets/Css_reset/normalize.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/Fonts/css/all.css">
     <style>
-        header>ul{
-            height: 100px;
+        /*Scroll*/
+        html {
+            scroll-behavior: smooth;
+        }
+
+        header {
+            z-index: 2;
+            position: fixed;
+            height: 40px;
             border: 1px solid red;
+            right: 0;
+            top: 0;
+            left: 0;
+            margin: 0px;
+            background-color: lightgray;
+        }
+
+        header > ul {
+            position: absolute;
+            right: 7px;
+            list-style: none;
+            height: 13px;
+            bottom: 0px;
+            font-size: 20px;
+        }
+
+        header > ul > li {
+            display: inline;
+        }
+
+        header > ul > li > a {
+            text-decoration: none;
+            font-family: 'Lobster', cursive;
+            color: black;
+            padding: 0px 10px 0px 10px;
+            font-weight: bold;
+        }
+
+        /*    End Of Top Line..*/
+        /*    Main Page*/
+        body > main > section {
+            position: relative;
+            margin-top: 42px;
+        }
+
+        body > main > section > img {
+            width: 100%;
+            height: 900px;
+        }
+
+        body > main > section > h1 {
+            color: white;
+            height: 10px;
+            width: 963px;
+            top: -352px;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            margin: auto;
+            position: absolute;
+            font-size: 100px;
+            font-family: cursive;
+        }
+
+        body > main > section > h4 {
+            position: absolute;
+            top: 14%;
+            left: 46%;
+            color: white;
+            font-size: 50px;
+        }
+
+        /*    Main Font Section Main Page (Hi,, <Name>)*/
+        /*    Social Media Icons*/
+        body > main > section > a {
+            position: absolute;
+            display: block;
+            text-decoration: none;
+            color: white;
+            font-size: 68px;
+            top: 45%;
+        }
+
+        body > main > section > a:hover {
+            cursor: pointer;
+        }
+
+        body > main > section > a:nth-child(4) {
+            right: 61vw;
+        }
+
+        body > main > section > a:nth-child(5) {
+            right: 49vw;
+        }
+
+        body > main > section > a:nth-child(6) {
+            right: 37vw;
+        }
+
+        /*    End Of Main Page....*/
+        /*    About Page*/
+        body > section:nth-child(3) {
+            border: 1px solid darkred;
+            position: relative;
+            top: -5px;
+        }
+
+        body > section:nth-child(3) > h2 {
+            position: relative;
+            height: 1px;
+            width: 137px;
+            color: grey;
+            font-family: -webkit-pictograph;
+            font-size: 28px;
+            top: 46px;
+            left: 0;
+            right: 0;
+            margin: auto;
+        }
+
+
+        body > section:nth-child(3) > p:nth-child(2) {
+            height: 26px;
+            width: 131px;
+            position: relative;
+            font-size: 34px;
+            top: 60px;
+            left: 0;
+            right: 0;
+            margin: auto;
+            color: gray;
+        }
+        /*End Of Title Of About*/
+
+        /*Information-About Me*/
+        body > section:nth-child(3) > h4:nth-child(3) {
+            height: 24px;
+            width: max-content;
+            position: relative;
+            color: black;
+            font-weight: bolder;
+            font-size: 28px;
+            left: 20px;
+            top: 60px;
+        }
+        body > section:nth-child(3) >p:nth-child(4){
+            top: 40px;
+            width: 394px;
+            position: relative;
+            left: 20px;
+            font-size: 19px;
+            font-family: cursive;
+            margin-bottom: 87px;
+        }
+    /*    End Of Info*/
+        body > section:nth-child(3)>div:nth-child(5){
+            width: 350px;
+            height: 350px;
+            background-color: grey;
+            position: absolute;
+            top: -19px;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            margin: auto;
+            border-radius: 100%;
+
+        }
+        body > section:nth-child(3)>div:nth-child(5)>img{
+            width: 100%;
+            height: 100%;
+            border-radius: 100%;
         }
     </style>
 </head>
@@ -23,17 +197,26 @@
 
 <main id="Home">
     <section>
-        <img src="assets/Web_Images/pixals.jpg" alt="Main Image">
+        <img src="assets/Web_Images/nature-g192675f21_1920.jpg" alt="Main Image">
         <h4>Hi I'm</h4>
         <h1>DILUSHAN PEIRIS</h1>
+        <a href=""><i class="fab fa-facebook"></i></a>
+        <a href=""><i class="fab fa-twitter"></i></a>
+        <a href=""><i class="fab fa-instagram"></i></a>
     </section>
 </main>
 
 <section id="About">
     <h2>ABOUT ME</h2>
+    <p>-----o-----</p>
     <h4>Dilushan Peiris</h4>
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati, rerum vero! Animi dolorem doloremque
-        eligendi esse est eveniet ex fuga in ipsum magni minima nesciunt, nisi porro possimus quibusdam, unde!</p>
+        eligendi esse est eveniet ex fuga in ipsum magni minima nesciunt, nisi porro possimus quibusdam, unde! Lorem
+        ipsum dolor sit amet, consectetur adipisicing elit. Aperiam cumque debitis dolore et eveniet fuga id illo ipsa
+        magni minus mollitia nam nihil nobis, obcaecati quasi quibusdam sequi sint unde? Lorem ipsum dolor sit amet,
+        consectetur adipisicing elit. Aut cupiditate dolorum eligendi fugiat laboriosam minima qui reiciendis suscipit
+        voluptate voluptates! Assumenda at consectetur eius ex expedita impedit magnam obcaecati possimus.</p>
+    <div><img src="assets/Web_Images/DSC_0107.jpg" alt=""></div>
     <h4>My Skills</h4>
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus animi blanditiis cum in ipsam iure labore
         magnam nam nemo obcaecati pariatur provident quo rem rerum sapiente sunt suscipit tenetur, voluptatem.</p>
