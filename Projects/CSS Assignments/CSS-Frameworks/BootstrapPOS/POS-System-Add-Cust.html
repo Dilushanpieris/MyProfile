@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>POS System..</title>
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <link href="assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/fonts/css/all.css">
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+            <img src="assets/img/home-icon.png" alt="" width="30" height="24" class="d-inline-block align-text-top">
+            POS System
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Orders</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Items</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                       data-bs-toggle="dropdown" aria-expanded="false">
+                        Others
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="#">Pricing</a></li>
+                        <li><a class="dropdown-item" href="#">Services</a></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item" href="#">About Us</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <form class="d-flex">
+            <button type="button" class="btn btn-outline-light me-2"><i class="fas fa-user-plus"></i> Sign Up</button>
+            <button type="button" class="btn btn-outline-light "><i class="fas fa-sign-in-alt"></i> Log Out</button>
+        </form>
+    </div>
+</nav>
+
+<div class="alert alert-secondary" role="alert">
+    <i class="fas fa-users"></i> Customer
+</div>
+
+<section class="container-fluid bg-light ">
+    <div class="row">
+        <div class="col pb-4 pt-5">
+            <section class="container-fluid bg-white pt-3">
+                <div class="row"><h4>Save Customer</h4></div>
+                <div class="row bg-white">
+                    <form class="d-flex mt-4 mb-4">
+                        <input class="form-control" type="search" placeholder="Search" aria-label="Search">
+                    </form>
+                </div>
+                <div class="row bg-white">
+                    <div class="col-3 pb-5">
+                        <button type="button" class="btn bg-success">Search</button>
+                    </div>
+                    <div class="col-3 pb-5">
+                        <div class="dropdown">
+                            <button class="btn btn-outline-dark dropdown-toggle" type="button" id="dropdownMenuButton1"
+                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                Name
+                            </button>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                <li><a class="dropdown-item" href="#">Action</a></li>
+                                <li><a class="dropdown-item" href="#">Another action</a></li>
+                                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <div class="col pt-5">
+            <!-- Button trigger modal -->
+            <button type="button" class="btn btn-primary me-2" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                Save New Customer
+            </button>
+            <button type="button" class="btn btn-warning">
+                View All Customer
+            </button>
+
+
+            <!-- Modal -->
+            <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+                 aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="staticBackdropLabel">New Customer</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <h4>Customer ID</h4>
+                            <form class="d-flex mt-4 mb-4">
+                                <input class="form-control" type="text">
+                            </form>
+                            <h4>Customer Name</h4>
+                            <form class="d-flex mt-4 mb-4">
+                                <input class="form-control" type="text">
+                            </form>
+                            <h4>Customer Address</h4>
+                            <form class="d-flex mt-4 mb-4">
+                                <input class="form-control" type="text">
+                            </form>
+                            <h4>Customer Salary</h4>
+                            <form class="d-flex mt-4 mb-4">
+                                <input class="form-control" type="text">
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Save</button>
+                            <button type="button" class="btn btn-warning" data-bs-dismiss="modal">Renew</button>
+                            <button type="button" class="btn btn-danger">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row pb-5">
+        <table class="table">
+            <thead class="table-dark">
+            <tr>
+                <th scope="col">Customer Name</th>
+                <th scope="col">Age</th>
+                <th scope="col">Telephone</th>
+                <th scope="col">Salary</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <th scope="row">1</th>
+                <td>Mark</td>
+                <td>Otto</td>
+                <td>@mdo</td>
+            </tr>
+            <tr>
+                <th scope="row">2</th>
+                <td>Jacob</td>
+                <td>Thornton</td>
+                <td>@fat</td>
+            </tr>
+            <tr>
+                <th scope="row">3</th>
+                <td colspan="2">Larry the Bird</td>
+                <td>@twitter</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</section>
+
+<script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
