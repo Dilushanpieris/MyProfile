@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <link href="assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/fonts/css/all.css">
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-utilities.css">
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+            <img src="assets/img/home-icon.png" alt="" width="30" height="24" class="d-inline-block align-text-top">
+            POS System
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Orders</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Items</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                       data-bs-toggle="dropdown" aria-expanded="false">
+                        Others
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="#">Pricing</a></li>
+                        <li><a class="dropdown-item" href="#">Services</a></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item" href="#">About Us</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <form>
+            <button type="button" class="btn btn-outline-light me-2"><i class="fas fa-user-plus"></i> Sign Up</button>
+            <button type="button" class="btn btn-outline-light "><i class="fas fa-sign-in-alt"></i> Log Out</button>
+        </form>
+    </div>
+</nav>
+<div class="alert alert-secondary" role="alert">
+    <i class="fas fa-shopping-bag"></i> Place Order
+</div>
+
+<!--main Container-->
+<section class="container-fluid bg-light">
+    <!--Order Placing Row-->
+    <section class="row">
+        <!--       Col 1 As Invoices Details-->
+        <div class="col bg-white m-4 pb-4">
+
+            <!-- Internal Grid           -->
+            <section class="container">
+                <!--Row 01-->
+                <div class="row">
+                    <div class="bg-success mb-3 p-2"><h4>Invoice Details</h4></div>
+                    <div class="col">
+                        <caption>Order ID:</caption>
+                        <form>
+                            <input class="form-control " type="text">
+                        </form>
+                    </div>
+                    <div class="col">
+                        <caption>Order Date:</caption>
+                        <form>
+                            <input class="form-control " type="text">
+                        </form>
+                    </div>
+
+                </div>
+                <!--Row 02-->
+                <div class="row">
+                    <div class="col">
+                        <caption>Customer:</caption>
+                        <form>
+                            <input class="form-control " type="text">
+                        </form>
+                    </div>
+                    <div class="col">
+                        <caption>Customer_ID:</caption>
+                        <form>
+                            <input class="form-control " type="text">
+                        </form>
+                    </div>
+
+                </div>
+                <!--Row 03-->
+                <div class="row">
+                    <div class="col">
+                        <caption>Name:</caption>
+                        <form>
+                            <input class="form-control " type="text">
+                        </form>
+                    </div>
+                    <div class="col">
+                        <caption>Salary:</caption>
+                        <form>
+                            <input class="form-control " type="text">
+                        </form>
+                    </div>
+
+                </div>
+                <!--Row 04-->
+                <div class="row">
+                    <div class="col">
+                        <caption>Address:</caption>
+                        <form>
+                            <input class="form-control " type="text">
+                        </form>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!--       Col 2 As Item Select-->
+        <div class="col bg-white m-4 pb-4">
+
+            <!--Container For Item Select Grid-->
+            <section class="container">
+                <!--Row 01-->
+                <div class="row">
+                    <div class="bg-success mb-3 p-2"><h4>Item Select</h4></div>
+                    <div class="col">
+                        <caption>Item:</caption>
+                        <form>
+                            <input class="form-control " type="text">
+                        </form>
+                    </div>
+                    <div class="col">
+                        <caption>Item Code:</caption>
+                        <form>
+                            <input class="form-control " type="text">
+                        </form>
+                    </div>
+                </div>
+
+                <!--Row 02-->
+                <div class="row">
+                    <div class="col">
+                        <caption>Item Name:</caption>
+                        <form>
+                            <input class="form-control " type="text">
+                        </form>
+                    </div>
+                    <div class="col">
+                        <caption>Item Price:</caption>
+                        <form>
+                            <input class="form-control " type="text">
+                        </form>
+                    </div>
+                    <div class="col">
+                        <caption>QtyOnH:</caption>
+                        <form>
+                            <input class="form-control " type="text">
+                        </form>
+                    </div>
+
+                </div>
+
+                <!--Row 03-->
+                <div class="row">
+                    <div class="col">
+                        <caption>Order QTY:</caption>
+                        <form>
+                            <input class="form-control " type="text">
+                        </form>
+                    </div>
+                </div>
+
+                <!--Row 04-->
+                <div class="row">
+                    <div class="col">
+                        <button class="btn btn-danger mt-4">Add Item</button>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+
+        <!--       Col 1 As Price Total-->
+        <div class="col bg-white m-4 pb-4">
+            <h4 class="text-primary">Total: 1050Rs./=</h4>
+            <h4 class="text-danger">Sub Total: 945Rs./=</h4>
+            <!-- Internal Grid-->
+            <section class="container">
+                <!--Row 01-->
+                <div class="row">
+                    <div class="col">
+                        <caption>Cash:</caption>
+                        <form>
+                            <input class="form-control " type="text">
+                        </form>
+                    </div>
+                    <div class="col">
+                        <caption>Discount:</caption>
+                        <form>
+                            <input class="form-control " type="text">
+                        </form>
+                    </div>
+                </div>
+
+
+                <!--Row 02-->
+                <div class="row">
+                    <div CLASS="col">
+                        <caption>Balance:</caption>
+                        <form>
+                            <input class="form-control " type="text">
+                        </form>
+                    </div>
+                </div>
+
+                <!--Row 03-->
+                <div class="row">
+                    <div class="col">
+                        <button class="btn btn-success mt-4">Purchase</button>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </section>
+    <!-- ####################  -->
+
+    <!--Table Row-->
+    <section class="row p-3 mb-5">
+        <div class="col">
+            <table class="table">
+                <thead class="table-warning">
+                <tr>
+                    <th scope="col">Customer Name</th>
+                    <th scope="col">Age</th>
+                    <th scope="col">Telephone</th>
+                    <th scope="col">Salary</th>
+                    <th scope="col">Salary</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <th scope="row">Kamal</th>
+                    <td>23</td>
+                    <td>071234567</td>
+                    <td>35,000</td>
+                    <td>35,000</td>
+                </tr>
+                <tr>
+                    <th scope="row">Nimal</th>
+                    <td>35</td>
+                    <td>089767776</td>
+                    <td>40,000</td>
+                    <td>35,000</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </section>
+</section>
+
+<script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

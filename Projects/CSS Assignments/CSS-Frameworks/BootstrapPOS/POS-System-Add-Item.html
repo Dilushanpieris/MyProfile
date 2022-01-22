@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>POS System..</title>
+    <title>POS System_ITEm.</title>
     <meta content="width=device-width, initial-scale=1" name="viewport">
     <link href="assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="assets/fonts/css/all.css">
@@ -54,14 +54,14 @@
 </nav>
 
 <div class="alert alert-secondary" role="alert">
-    <i class="fas fa-users"></i> Customer
+    <i class="fas fa-shopping-cart"></i> Item
 </div>
 
 <section class="container-fluid bg-light ">
     <div class="row">
         <div class="col pb-4 pt-5">
             <section class="container-fluid bg-white pt-3">
-                <div class="row w-100 bg-success"><h4>Save Customer</h4></div>
+                <div class="row w-100 bg-success"><h4>Save Item</h4></div>
                 <div class="row bg-white">
                     <form class="mt-4 mb-4 w-100" >
                         <input class="form-control w-100" type="search" placeholder="Search" aria-label="Search">
@@ -90,10 +90,10 @@
         <div class="col pt-5">
             <!-- Button trigger modal -->
             <button type="button" class="btn btn-primary me-2" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-                Save New Customer
+                Save New Item
             </button>
             <button type="button" class="btn btn-warning">
-                View All Customer
+                View All Item
             </button>
 
 
@@ -103,23 +103,23 @@
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title" id="staticBackdropLabel">New Customer</h5>
+                            <h5 class="modal-title" id="staticBackdropLabel">New Item</h5>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
-                            <h4>Customer ID</h4>
+                            <h4>Item ID</h4>
                             <form class="d-flex mt-4 mb-4">
                                 <input class="form-control" type="text">
                             </form>
-                            <h4>Customer Name</h4>
+                            <h4> Name</h4>
                             <form class="d-flex mt-4 mb-4">
                                 <input class="form-control" type="text">
                             </form>
-                            <h4>Customer Address</h4>
+                            <h4>QTY</h4>
                             <form class="d-flex mt-4 mb-4">
                                 <input class="form-control" type="text">
                             </form>
-                            <h4>Customer Salary</h4>
+                            <h4>Price</h4>
                             <form class="d-flex mt-4 mb-4">
                                 <input class="form-control" type="text">
                             </form>
@@ -145,30 +145,30 @@
         <table class="table">
             <thead class="table-dark">
             <tr>
-                <th scope="col">Customer Name</th>
-                <th scope="col">Age</th>
-                <th scope="col">Telephone</th>
-                <th scope="col">Salary</th>
+                <th scope="col">Item_ID</th>
+                <th scope="col">Name</th>
+                <th scope="col">QTY</th>
+                <th scope="col">Price</th>
             </tr>
             </thead>
             <tbody>
             <tr>
-                <th scope="row">Kamal</th>
-                <td>23</td>
-                <td>071234567</td>
-                <td>35,000</td>
+                <th scope="row">IT001</th>
+                <td>Soap</td>
+                <td>34</td>
+                <td>350.00</td>
             </tr>
             <tr>
-                <th scope="row">Nimal</th>
-                <td>35</td>
-                <td>089767776</td>
-                <td>40,000</td>
+                <th scope="row">IT002</th>
+                <td>Tuna</td>
+                <td>400</td>
+                <td>400.00</td>
             </tr>
             <tr>
-                <th scope="row">Sunil</th>
-                <td>65</td>
-                <td>0567878799</td>
-                <td>35,000</td>
+                <th scope="row">IT003</th>
+                <td>Dishwash</td>
+                <td>40</td>
+                <td>250.00</td>
             </tr>
             </tbody>
         </table>
