@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>POS System..</title>
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <link href="assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/fonts/css/all.css">
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-utilities.css">
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+            <img src="assets/img/home-icon.png" alt="" width="30" height="24" class="d-inline-block align-text-top">
+            POS System
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#" id="HomeBtn">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" id="OrdersBtn">Orders</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" id="ItemsBtn">Items</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                       data-bs-toggle="dropdown" aria-expanded="false">
+                        Others
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="#">Pricing</a></li>
+                        <li><a class="dropdown-item" href="#">Services</a></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item" href="#">About Us</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <form class="d-flex">
+            <button type="button" class="btn btn-outline-light me-2"><i class="fas fa-user-plus"></i> Sign Up</button>
+            <button type="button" class="btn btn-outline-light "><i class="fas fa-sign-in-alt"></i> Log Out</button>
+        </form>
+    </div>
+</nav>
+<section id="ManageCustomePage">
+    <div class="alert alert-secondary" role="alert">
+        <i class="fas fa-users"></i> Customer
+    </div>
+
+    <section class="container-fluid bg-light ">
+        <div class="row">
+            <div class="col pb-4 pt-5">
+                <section class="container-fluid bg-white pt-3">
+                    <div class="row w-100 bg-success"><h4>Save Customer</h4></div>
+                    <div class="row bg-white">
+                        <form class="mt-4 mb-4 w-100">
+                            <input class="form-control w-100" type="search" placeholder="Search" aria-label="Search">
+                        </form>
+                    </div>
+                    <div class="row bg-white">
+                        <div class="col-3 pb-5">
+                            <button type="button" class="btn bg-success w-100">Search</button>
+                        </div>
+                        <div class="col-3 pb-5">
+                            <div class="dropdown">
+                                <button class="btn btn-outline-dark dropdown-toggle w-100" type="button"
+                                        id="dropdownMenuButton1"
+                                        data-bs-toggle="dropdown" aria-expanded="false">
+                                    Name
+                                </button>
+                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                    <li><a class="dropdown-item" href="#">Action</a></li>
+                                    <li><a class="dropdown-item" href="#">Another action</a></li>
+                                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <div class="col pt-5">
+                <!-- Button trigger modal -->
+                <button type="button" class="btn btn-primary me-2" data-bs-toggle="modal"
+                        data-bs-target="#staticBackdrop">
+                    Save New Customer
+                </button>
+                <button type="button" class="btn btn-warning">
+                    View All Customer
+                </button>
+
+
+                <!-- Modal -->
+                <div class="modal fade"data-bs-backdrop="static" data-bs-keyboard="false"
+                     tabindex="-1"
+                     aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title">New Customer</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <h4>Customer ID</h4>
+                                <form class="d-flex mt-4 mb-4">
+                                    <input class="form-control" type="text">
+                                </form>
+                                <h4>Customer Name</h4>
+                                <form class="d-flex mt-4 mb-4">
+                                    <input class="form-control" type="text">
+                                </form>
+                                <h4>Customer Address</h4>
+                                <form class="d-flex mt-4 mb-4">
+                                    <input class="form-control" type="text">
+                                </form>
+                                <h4>Customer Salary</h4>
+                                <form class="d-flex mt-4 mb-4">
+                                    <input class="form-control" type="text">
+                                </form>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Save</button>
+                                <button type="button" class="btn btn-warning" data-bs-dismiss="modal">Renew</button>
+                                <button type="button" class="btn btn-danger">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mb-2">
+            <div class="col-1">
+                <button type="button" class="btn btn-primary w-100">Clear</button>
+            </div>
+            <div class="col-1">
+                <button type="button" class="btn btn-warning w-100">Delete</button>
+            </div>
+            <div class="col-1">
+                <button type="button" class="btn btn-danger w-100">Update</button>
+            </div>
+        </div>
+
+        <div class="row pb-5">
+            <table class="table">
+                <thead class="table-dark">
+                <tr>
+                    <th scope="col">Customer Name</th>
+                    <th scope="col">Age</th>
+                    <th scope="col">Telephone</th>
+                    <th scope="col">Salary</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <th scope="row">Kamal</th>
+                    <td>23</td>
+                    <td>071234567</td>
+                    <td>35,000</td>
+                </tr>
+                <tr>
+                    <th scope="row">Nimal</th>
+                    <td>35</td>
+                    <td>089767776</td>
+                    <td>40,000</td>
+                </tr>
+                <tr>
+                    <th scope="row">Sunil</th>
+                    <td>65</td>
+                    <td>0567878799</td>
+                    <td>35,000</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+</section>
+<section id="ManageItemPage">
+    <div class="alert alert-secondary" role="alert">
+        <i class="fas fa-shopping-cart"></i> Item
+    </div>
+
+    <section class="container-fluid bg-light ">
+        <div class="row">
+            <div class="col pb-4 pt-5">
+                <section class="container-fluid bg-white pt-3">
+                    <div class="row w-100 bg-success"><h4>Save Item</h4></div>
+                    <div class="row bg-white">
+                        <form class="mt-4 mb-4 w-100">
+                            <input class="form-control w-100" type="search" placeholder="Search" aria-label="Search">
+                        </form>
+                    </div>
+                    <div class="row bg-white">
+                        <div class="col-3 pb-5">
+                            <button type="button" class="btn bg-success w-100">Search</button>
+                        </div>
+                        <div class="col-3 pb-5">
+                            <div class="dropdown">
+                                <button class="btn btn-outline-dark dropdown-toggle w-100" type="button"
+                                        id=""
+                                        data-bs-toggle="dropdown" aria-expanded="false">
+                                    Name
+                                </button>
+                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                    <li><a class="dropdown-item" href="#">Action</a></li>
+                                    <li><a class="dropdown-item" href="#">Another action</a></li>
+                                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <div class="col pt-5">
+                <!-- Button trigger modal -->
+                <button type="button" class="btn btn-primary me-2" data-bs-toggle="modal"
+                        data-bs-target="#staticBackdrop">
+                    Save New Item
+                </button>
+                <button type="button" class="btn btn-warning">
+                    View All Item
+                </button>
+
+
+                <!-- Modal -->
+                <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false"
+                     tabindex="-1"
+                     aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="staticBackdropLabel">New Item</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <h4>Item ID</h4>
+                                <form class="d-flex mt-4 mb-4">
+                                    <input class="form-control" type="text">
+                                </form>
+                                <h4> Name</h4>
+                                <form class="d-flex mt-4 mb-4">
+                                    <input class="form-control" type="text">
+                                </form>
+                                <h4>QTY</h4>
+                                <form class="d-flex mt-4 mb-4">
+                                    <input class="form-control" type="text">
+                                </form>
+                                <h4>Price</h4>
+                                <form class="d-flex mt-4 mb-4">
+                                    <input class="form-control" type="text">
+                                </form>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Save</button>
+                                <button type="button" class="btn btn-warning" data-bs-dismiss="modal">Renew</button>
+                                <button type="button" class="btn btn-danger">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mb-2">
+            <div class="col-1">
+                <button type="button" class="btn btn-primary w-100">Clear</button>
+            </div>
+            <div class="col-1">
+                <button type="button" class="btn btn-warning w-100">Delete</button>
+            </div>
+            <div class="col-1">
+                <button type="button" class="btn btn-danger w-100">Update</button>
+            </div>
+        </div>
+
+        <div class="row pb-5">
+            <table class="table">
+                <thead class="table-dark">
+                <tr>
+                    <th scope="col">Item_ID</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">QTY</th>
+                    <th scope="col">Price</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <th scope="row">IT001</th>
+                    <td>Soap</td>
+                    <td>34</td>
+                    <td>350.00</td>
+                </tr>
+                <tr>
+                    <th scope="row">IT002</th>
+                    <td>Tuna</td>
+                    <td>400</td>
+                    <td>400.00</td>
+                </tr>
+                <tr>
+                    <th scope="row">IT003</th>
+                    <td>Dishwash</td>
+                    <td>40</td>
+                    <td>250.00</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+</section>
+<section id="PlaceOrderPage">
+    <div class="alert alert-secondary" role="alert">
+        <i class="fas fa-shopping-bag"></i> Place Order
+    </div>
+
+    <!--main Container-->
+    <section class="container-fluid bg-light">
+        <!--Order Placing Row-->
+        <section class="row">
+            <!--       Col 1 As Invoices Details-->
+            <div class="col bg-white m-4 pb-4">
+
+                <!-- Internal Grid           -->
+                <section class="container">
+                    <!--Row 01-->
+                    <div class="row">
+                        <div class="bg-success mb-3 p-2"><h4>Invoice Details</h4></div>
+                        <div class="col">
+                            <caption>Order ID:</caption>
+                            <form>
+                                <input class="form-control " type="text">
+                            </form>
+                        </div>
+                        <div class="col">
+                            <caption>Order Date:</caption>
+                            <form>
+                                <input class="form-control " type="text">
+                            </form>
+                        </div>
+
+                    </div>
+                    <!--Row 02-->
+                    <div class="row">
+                        <div class="col">
+                            <caption>Customer:</caption>
+                            <form>
+                                <input class="form-control " type="text">
+                            </form>
+                        </div>
+                        <div class="col">
+                            <caption>Customer_ID:</caption>
+                            <form>
+                                <input class="form-control " type="text">
+                            </form>
+                        </div>
+
+                    </div>
+                    <!--Row 03-->
+                    <div class="row">
+                        <div class="col">
+                            <caption>Name:</caption>
+                            <form>
+                                <input class="form-control " type="text">
+                            </form>
+                        </div>
+                        <div class="col">
+                            <caption>Salary:</caption>
+                            <form>
+                                <input class="form-control " type="text">
+                            </form>
+                        </div>
+
+                    </div>
+                    <!--Row 04-->
+                    <div class="row">
+                        <div class="col">
+                            <caption>Address:</caption>
+                            <form>
+                                <input class="form-control " type="text">
+                            </form>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <!--       Col 2 As Item Select-->
+            <div class="col bg-white m-4 pb-4">
+
+                <!--Container For Item Select Grid-->
+                <section class="container">
+                    <!--Row 01-->
+                    <div class="row">
+                        <div class="bg-success mb-3 p-2"><h4>Item Select</h4></div>
+                        <div class="col">
+                            <caption>Item:</caption>
+                            <form>
+                                <input class="form-control " type="text">
+                            </form>
+                        </div>
+                        <div class="col">
+                            <caption>Item Code:</caption>
+                            <form>
+                                <input class="form-control " type="text">
+                            </form>
+                        </div>
+                    </div>
+
+                    <!--Row 02-->
+                    <div class="row">
+                        <div class="col">
+                            <caption>Item Name:</caption>
+                            <form>
+                                <input class="form-control " type="text">
+                            </form>
+                        </div>
+                        <div class="col">
+                            <caption>Item Price:</caption>
+                            <form>
+                                <input class="form-control " type="text">
+                            </form>
+                        </div>
+                        <div class="col">
+                            <caption>QtyOnH:</caption>
+                            <form>
+                                <input class="form-control " type="text">
+                            </form>
+                        </div>
+
+                    </div>
+
+                    <!--Row 03-->
+                    <div class="row">
+                        <div class="col">
+                            <caption>Order QTY:</caption>
+                            <form>
+                                <input class="form-control " type="text">
+                            </form>
+                        </div>
+                    </div>
+
+                    <!--Row 04-->
+                    <div class="row">
+                        <div class="col">
+                            <button class="btn btn-danger mt-4">Add Item</button>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+
+            <!--       Col 1 As Price Total-->
+            <div class="col bg-white m-4 pb-4">
+                <h4 class="text-primary">Total: 1050Rs./=</h4>
+                <h4 class="text-danger">Sub Total: 945Rs./=</h4>
+                <!-- Internal Grid-->
+                <section class="container">
+                    <!--Row 01-->
+                    <div class="row">
+                        <div class="col">
+                            <caption>Cash:</caption>
+                            <form>
+                                <input class="form-control " type="text">
+                            </form>
+                        </div>
+                        <div class="col">
+                            <caption>Discount:</caption>
+                            <form>
+                                <input class="form-control " type="text">
+                            </form>
+                        </div>
+                    </div>
+
+
+                    <!--Row 02-->
+                    <div class="row">
+                        <div CLASS="col">
+                            <caption>Balance:</caption>
+                            <form>
+                                <input class="form-control " type="text">
+                            </form>
+                        </div>
+                    </div>
+
+                    <!--Row 03-->
+                    <div class="row">
+                        <div class="col">
+                            <button class="btn btn-success mt-4">Purchase</button>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </section>
+        <!-- ####################  -->
+
+        <!--Table Row-->
+        <section class="row p-3 mb-5">
+            <div class="col">
+                <table class="table">
+                    <thead class="table-warning">
+                    <tr>
+                        <th scope="col">Customer Name</th>
+                        <th scope="col">Age</th>
+                        <th scope="col">Telephone</th>
+                        <th scope="col">Salary</th>
+                        <th scope="col">Salary</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <th scope="row">Kamal</th>
+                        <td>23</td>
+                        <td>071234567</td>
+                        <td>35,000</td>
+                        <td>35,000</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Nimal</th>
+                        <td>35</td>
+                        <td>089767776</td>
+                        <td>40,000</td>
+                        <td>35,000</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </section>
+    </section>
+</section>
+<script>
+    document.getElementById("ManageItemPage").style.display="none";
+    document.getElementById("PlaceOrderPage").style.display="none";
+    //First Btn Func
+    document.getElementById("HomeBtn").addEventListener("click",function () {
+        document.getElementById("ManageItemPage").style.display="none";
+        document.getElementById("PlaceOrderPage").style.display="none";
+        document.getElementById("ManageCustomePage").style.display="block";
+    });
+    //Sec Btn Func
+    document.getElementById("ItemsBtn").addEventListener("click",function () {
+        document.getElementById("ManageItemPage").style.display="block";
+        document.getElementById("PlaceOrderPage").style.display="none";
+        document.getElementById("ManageCustomePage").style.display="none";
+    });
+    //Third Btn Func
+    document.getElementById("OrdersBtn").addEventListener("click",function () {
+        document.getElementById("ManageItemPage").style.display="none";
+        document.getElementById("PlaceOrderPage").style.display="block";
+        document.getElementById("ManageCustomePage").style.display="none";
+    });
+</script>
+<script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
