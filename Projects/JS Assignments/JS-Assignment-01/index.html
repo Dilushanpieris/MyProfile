@@ -91,7 +91,7 @@
             <div class="col pt-5">
                 <!-- Button trigger modal -->
                 <button type="button" class="btn btn-primary me-2" data-bs-toggle="modal"
-                        data-bs-target="#staticBackdrop">
+                        data-bs-target="#staticBackdrop1">
                     Save New Customer
                 </button>
                 <button type="button" class="btn btn-warning">
@@ -100,36 +100,36 @@
 
 
                 <!-- Modal -->
-                <div class="modal fade"data-bs-backdrop="static" data-bs-keyboard="false"
+                <div class="modal fade" id="staticBackdrop1" data-bs-backdrop="static" data-bs-keyboard="false"
                      tabindex="-1"
-                     aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                     aria-labelledby="staticBackdropLabel1" aria-hidden="true">
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h5 class="modal-title">New Customer</h5>
+                                <h5 class="modal-title" id="staticBackdropLabel1">New Item</h5>
                                 <button type="button" class="btn-close" data-bs-dismiss="modal"
                                         aria-label="Close"></button>
                             </div>
                             <div class="modal-body">
-                                <h4>Customer ID</h4>
-                                <form class="d-flex mt-4 mb-4">
-                                    <input class="form-control" type="text">
-                                </form>
                                 <h4>Customer Name</h4>
                                 <form class="d-flex mt-4 mb-4">
-                                    <input class="form-control" type="text">
+                                    <input class="form-control" type="text" id="CustomerName">
+                                </form>
+                                <h4>Customer Age</h4>
+                                <form class="d-flex mt-4 mb-4">
+                                    <input class="form-control" type="text" id="CustomerAge">
                                 </form>
                                 <h4>Customer Address</h4>
                                 <form class="d-flex mt-4 mb-4">
-                                    <input class="form-control" type="text">
+                                    <input class="form-control" type="text" id="CustomerAddress">
                                 </form>
                                 <h4>Customer Salary</h4>
                                 <form class="d-flex mt-4 mb-4">
-                                    <input class="form-control" type="text">
+                                    <input class="form-control" type="text" id="CustomerSalary">
                                 </form>
                             </div>
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Save</button>
+                                <button type="button" class="btn btn-primary" data-bs-dismiss="modal" id="CustomerSaveBtn">Save</button>
                                 <button type="button" class="btn btn-warning" data-bs-dismiss="modal">Renew</button>
                                 <button type="button" class="btn btn-danger">Close</button>
                             </div>
@@ -152,7 +152,7 @@
         </div>
 
         <div class="row pb-5">
-            <table class="table">
+            <table class="table" id="CustomerTable">
                 <thead class="table-dark">
                 <tr>
                     <th scope="col">Customer Name</th>
@@ -246,23 +246,23 @@
                             <div class="modal-body">
                                 <h4>Item ID</h4>
                                 <form class="d-flex mt-4 mb-4">
-                                    <input class="form-control" type="text">
+                                    <input class="form-control" type="text" id="ItemID">
                                 </form>
                                 <h4> Name</h4>
                                 <form class="d-flex mt-4 mb-4">
-                                    <input class="form-control" type="text">
+                                    <input class="form-control" type="text" id="ItemName">
                                 </form>
                                 <h4>QTY</h4>
                                 <form class="d-flex mt-4 mb-4">
-                                    <input class="form-control" type="text">
+                                    <input class="form-control" type="text" id="ItemQty">
                                 </form>
                                 <h4>Price</h4>
                                 <form class="d-flex mt-4 mb-4">
-                                    <input class="form-control" type="text">
+                                    <input class="form-control" type="text" id="ItemPrice">
                                 </form>
                             </div>
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Save</button>
+                                <button type="button" class="btn btn-primary" data-bs-dismiss="modal" id="ItemSaveBtn">Save</button>
                                 <button type="button" class="btn btn-warning" data-bs-dismiss="modal">Renew</button>
                                 <button type="button" class="btn btn-danger">Close</button>
                             </div>
@@ -285,7 +285,7 @@
         </div>
 
         <div class="row pb-5">
-            <table class="table">
+            <table class="table" id="ItemTable">
                 <thead class="table-dark">
                 <tr>
                     <th scope="col">Item_ID</th>
@@ -537,26 +537,45 @@
         </section>
     </section>
 </section>
+<script src="assets/JQuery/jquery-3.6.0.min.js"></script>
 <script>
-    document.getElementById("ManageItemPage").style.display="none";
-    document.getElementById("PlaceOrderPage").style.display="none";
+    $("#ManageItemPage").css("display","none");
+    $("#PlaceOrderPage").css("display","none");
     //First Btn Func
-    document.getElementById("HomeBtn").addEventListener("click",function () {
-        document.getElementById("ManageItemPage").style.display="none";
-        document.getElementById("PlaceOrderPage").style.display="none";
-        document.getElementById("ManageCustomePage").style.display="block";
+    $("#HomeBtn").click(function () {
+        $("#ManageCustomePage").css("display","block");
+        $("#ManageItemPage").css("display","none");
+        $("#PlaceOrderPage").css("display","none");
     });
     //Sec Btn Func
-    document.getElementById("ItemsBtn").addEventListener("click",function () {
-        document.getElementById("ManageItemPage").style.display="block";
-        document.getElementById("PlaceOrderPage").style.display="none";
-        document.getElementById("ManageCustomePage").style.display="none";
+    $("#ItemsBtn").click(function () {
+        $("#ManageCustomePage").css("display","none");
+        $("#ManageItemPage").css("display","block");
+        $("#PlaceOrderPage").css("display","none");
     });
     //Third Btn Func
-    document.getElementById("OrdersBtn").addEventListener("click",function () {
-        document.getElementById("ManageItemPage").style.display="none";
-        document.getElementById("PlaceOrderPage").style.display="block";
-        document.getElementById("ManageCustomePage").style.display="none";
+    $("#OrdersBtn").click(function () {
+        $("#ManageCustomePage").css("display","none");
+        $("#ManageItemPage").css("display","none");
+        $("#PlaceOrderPage").css("display","block");
+    });
+    //Customer Save Btn
+    $("#CustomerSaveBtn").click(function () {
+        $("#CustomerTable>tbody").append("<tr>"+
+            "<th scope='row'>"+$("#CustomerName").val()+"</th>"+
+            "<td>"+$("#CustomerAge").val()+"</td>"+
+            "<td>"+$("#CustomerAddress").val()+"</td>"+
+            "<td>"+$("#CustomerSalary").val()+"</td>"+
+            "</tr>");
+    });
+    //Item Save Btn
+    $("#ItemSaveBtn").click(function () {
+        $("#ItemTable>tbody").append("<tr>"+
+            "<th scope='row'>"+$("#ItemID").val()+"</th>"+
+            "<td>"+$("#ItemName").val()+"</td>"+
+            "<td>"+$("#ItemQty").val()+"</td>"+
+            "<td>"+$("#ItemPrice").val()+"</td>"+
+            "</tr>");
     });
 </script>
 <script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
