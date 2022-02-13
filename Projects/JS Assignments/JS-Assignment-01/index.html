@@ -508,7 +508,7 @@
         }
     });
 
-    //Validation-Customer.Salary
+    //Validation-Customer.TP
     let RegExCusTP=/^(07)[0-9]{8,9}$/;
     $("#txtCusTP").keyup(function () {
         let input =$("#txtCusTP").val();
@@ -517,6 +517,54 @@
         }
         else{
             $("#txtCusTP").css('border','2px solid red');
+        }
+    });
+
+    //Validation-Item.Id
+    let RegExItemID=/^(I00-)[0-9]{3,4}$/;
+    $("#txtItemCode").keyup(function () {
+        let input =$("#txtItemCode").val();
+        if(RegExItemID.test(input)){
+            $("#txtItemCode").css('border','2px solid green');
+        }
+        else{
+            $("#txtItemCode").css('border','2px solid red');
+        }
+    });
+
+    //Validation-Item.Name
+    let RegExItemName=/^[A-z]{4,100}$/;
+    $("#txtItemName").keyup(function () {
+        let input =$("#txtItemName").val();
+        if(RegExItemName.test(input)){
+            $("#txtItemName").css('border','2px solid green');
+        }
+        else{
+            $("#txtItemName").css('border','2px solid red');
+        }
+    });
+
+    //Validation-Item.Qty
+    let RegExItemQty=/^[0-9]{1,5}$/;
+    $("#txtItemQty").keyup(function () {
+        let input =$("#txtItemQty").val();
+        if(RegExItemQty.test(input)){
+            $("#txtItemQty").css('border','2px solid green');
+        }
+        else{
+            $("#txtItemQty").css('border','2px solid red');
+        }
+    });
+
+    //Validation-Item.Price
+    let RegExItemPrice=/^[0-9]{1,9}(.)[0-9]{2}$/;
+    $("#txtItemPrice").keyup(function () {
+        let input =$("#txtItemPrice").val();
+        if(RegExItemPrice.test(input)){
+            $("#txtItemPrice").css('border','2px solid green');
+        }
+        else{
+            $("#txtItemPrice").css('border','2px solid red');
         }
     });
 </script>
