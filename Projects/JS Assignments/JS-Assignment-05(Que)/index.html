@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Que..</title>
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <link href="assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/fonts/css/all.css">
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-utilities.css">
+    <style>
+        body > main > section {
+            display: flex;
+        }
+
+        body > main > section > div {
+            border: 1px solid black;
+            margin: 30px;
+            width: 100px;
+            height: 56px;
+        }
+
+        body > main > div {
+            border: 1px solid black;
+            margin: 30px;
+            width: 100px;
+            height: 56px;
+        }
+
+        #bottom {
+            position: relative;
+            left: 805px;
+        }
+
+        body > main {
+            position: relative;
+            top: 200px;
+            width: fit-content;
+            left: 200px;
+        }
+
+    </style>
+</head>
+<body>
+<main>
+    <div id="top"></div>
+    <hr>
+    <section id="main">
+        <div id="1"></div>
+        <div id="2"></div>
+        <div id="3"></div>
+        <div id="4"></div>
+        <div id="5"></div>
+        <div id="6"></div>
+
+    </section>
+    <hr>
+    <div id="bottom"></div>
+</main>
+<script src="assets/JQuery/jquery-3.6.0.min.js"></script>
+<script>
+    var idArray = [$("#top"), $("#1"), $("#2"), $("#3"), $("#4"), $("#5"), $("#6"), $("#bottom")];
+    var colorArray = ["red", "green", "yellow", "darkBlue", "blue", "pink", "grey", "deeppink"]
+
+    function makeArray() {
+        var firistVal = colorArray[0];
+        var secVal = colorArray[1];
+        var thirdVal = colorArray[2];
+        var fourthVal = colorArray[3];
+        var fifthVal = colorArray[4];
+        var sixthVal = colorArray[5];
+        var sevnthVal = colorArray[6];
+        var eightVal= colorArray[7];
+        colorArray=[eightVal,firistVal,secVal,thirdVal,fourthVal,fifthVal,sixthVal,sevnthVal];
+        console.log(colorArray)
+    }
+    function assign() {
+        makeArray();
+        idArray[0].css("background-color",colorArray[0]);
+        idArray[1].css("background-color",colorArray[1]);
+        idArray[2].css("background-color",colorArray[2]);
+        idArray[3].css("background-color",colorArray[3]);
+        idArray[4].css("background-color",colorArray[4]);
+        idArray[5].css("background-color",colorArray[5]);
+        idArray[6].css("background-color",colorArray[6]);
+        idArray[7].css("background-color",colorArray[7]);
+    }
+    setInterval(assign,500);
+
+    //custom script
+</script>
+<script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
