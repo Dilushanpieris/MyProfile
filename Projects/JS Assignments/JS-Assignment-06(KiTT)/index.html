@@ -41,10 +41,7 @@
 <script>
     var colorArray = ["#ff0000", "#ff3333", "#ff5c5c", "#ff7575", "#ff9999", "#fac3c3"];
     var idArray = [$("#1"), $("#2"), $("#3"), $("#4"), $("#5"), $("#6")];
-
-    function makeArray() {
-
-    }
+    var intervalDuration=150; //change this to speed
 
     function clearColor() {
         for (var i = 0; i < idArray.length; i++) {
@@ -56,11 +53,38 @@
     function forward() {
         clearColor();
         idArray[i].css("background-color", colorArray[0]);
+        if(i==1){
+            idArray[1].css("background-color", colorArray[1]);
+            idArray[0].css("background-color", colorArray[2]);
+        }
+        if(i==2){
+            idArray[2].css("background-color", colorArray[1]);
+            idArray[1].css("background-color", colorArray[2]);
+            idArray[0].css("background-color", colorArray[3]);
+        }
+        if(i==3){
+            idArray[2].css("background-color", colorArray[1]);
+            idArray[1].css("background-color", colorArray[2]);
+            idArray[0].css("background-color", colorArray[3]);
+        }
+        if(i==4){
+            idArray[3].css("background-color", colorArray[1]);
+            idArray[2].css("background-color", colorArray[2]);
+            idArray[1].css("background-color", colorArray[3]);
+            idArray[0].css("background-color", colorArray[4]);
+        }
+        if(i==5){
+            idArray[4].css("background-color", colorArray[1]);
+            idArray[3].css("background-color", colorArray[2]);
+            idArray[2].css("background-color", colorArray[3]);
+            idArray[1].css("background-color", colorArray[4]);
+            idArray[0].css("background-color", colorArray[5]);
+        }
         i++;
         if (i == 6) {
             i=0;
             clearInterval(intervalF);
-            IntervalX = setInterval(backward,300);
+            IntervalX = setInterval(backward,intervalDuration);
         }
     }
 
@@ -69,6 +93,31 @@
     function backward() {
         clearColor();
         idArray[x].css("background-color", colorArray[0]);
+        if(x==4){
+            idArray[5].css("background-color", colorArray[1]);
+        }
+        if(x==3){
+            idArray[5].css("background-color", colorArray[2]);
+            idArray[4].css("background-color", colorArray[1]);
+        }
+        if(x==2){
+            idArray[5].css("background-color", colorArray[3]);
+            idArray[4].css("background-color", colorArray[2]);
+            idArray[3].css("background-color", colorArray[1]);
+        }
+        if(x==1){
+            idArray[5].css("background-color", colorArray[4]);
+            idArray[4].css("background-color", colorArray[3]);
+            idArray[3].css("background-color", colorArray[2]);
+            idArray[2].css("background-color", colorArray[1]);
+        }
+        if(x==0){
+            idArray[5].css("background-color", colorArray[5]);
+            idArray[4].css("background-color", colorArray[4]);
+            idArray[3].css("background-color", colorArray[3]);
+            idArray[2].css("background-color", colorArray[2]);
+            idArray[1].css("background-color", colorArray[1]);
+        }
         x--;
         if (x == -1) {
             x=5;
@@ -77,9 +126,9 @@
         }
     }
     function start() {
-        intervalF = setInterval(forward, 300);
+        intervalF = setInterval(forward, intervalDuration);
     }
-    let intervalF = setInterval(forward, 300);
+    let intervalF = setInterval(forward, intervalDuration);
     //custom Script
 </script>
 <script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
