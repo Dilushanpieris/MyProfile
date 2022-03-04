@@ -7,7 +7,7 @@ function Customer(id,name,address,telephone) {
     this.getCustomerID=function () {
         return __custId;
     }
-    this.getCusomerName=function () {
+    this.getCustomerName=function () {
         return __custName;
     }
     this.getCustomerAddress=function () {
@@ -19,7 +19,7 @@ function Customer(id,name,address,telephone) {
     this.setCustomerID=function (id) {
          __custId=id;
     }
-    this.setCusomerName=function (name) {
+    this.setCustomerName=function (name) {
          __custName=name;
     }
     this.setCustomerAddress=function (address) {
