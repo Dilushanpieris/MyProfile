@@ -35,11 +35,23 @@ $("#btnSearch").click(function () {
         $("#txtCusName").val(customer[index].getCustomerName());
         $("#txtCusAddress").val(customer[index].getCustomerAddress());
         $("#txtCusTP").val(customer[index].getCustomerTelephone());
+        return;
     }
+    alert("Customer Not Found");
 });
 
 //Delete Function ..
-
+$("#btnDelete").click(function () {
+    let customerID=$("#txtCusID").val();
+    let index=isExists(customerID);
+    if(index!=-1){
+        customer.splice(index,1);
+        loadAllCustomers();
+        alert("Customer "+customerID+" Deleted");
+        return;
+    }
+    alert("No Customer Found");
+});
 
 
 function isExists(id,address){
@@ -80,11 +92,6 @@ function bindEvent() {
         $("#txtCusTP").val(CustomerTP);
     });
 }
-
-
-
-
-
 
 function clearValidation() {
     $("#validationTextId").css('display','none');
