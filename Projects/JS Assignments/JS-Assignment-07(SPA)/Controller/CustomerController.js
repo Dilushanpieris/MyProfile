@@ -1,4 +1,6 @@
 //SaveOrUpdate Functions ...(Customer) Need To redesign
+clearValidation();
+
 $("#btnSaveOrUpdate").click(function () {
     //gather customer information
     let customerID = $("#txtCusID").val();
@@ -23,18 +25,33 @@ $("#btnSaveOrUpdate").click(function () {
 });
 
 //Search Function Search bar..
+$("#btnSearch").click(function () {
+    //gather Address Or ID
+    let property=$("#srcCusID").val();
+    let index=isExists(property,property);
+    if(index!=-1){
+        alert("Customer Found");
+        $("#txtCusID").val(customer[index].getCustomerID());
+        $("#txtCusName").val(customer[index].getCustomerName());
+        $("#txtCusAddress").val(customer[index].getCustomerAddress());
+        $("#txtCusTP").val(customer[index].getCustomerTelephone());
+    }
+});
+
+//Delete Function ..
 
 
 
-function isExists(id){
+function isExists(id,address){
     let x=-1;
     for(let i=0;i<customer.length;i++){
-        if(customer[i].getCustomerID()==id) {
+        if(customer[i].getCustomerID()==id||customer[i].getCustomerAddress()==address) {
             x = i;
         }
     }
     return x;
 }
+
 function loadAllCustomers() {
     $("#customerTable>tr").remove();
     for(let i=0;i<customer.length;i++){
@@ -69,14 +86,21 @@ function bindEvent() {
 
 
 
-
-
-
-
+function clearValidation() {
+    $("#validationTextId").css('display','none');
+    $("#validationTextName").css('display','none');
+    $("#validationTextAddress").css('display','none');
+    $("#validationTextTp").css('display','none');
+}
 
 //Validation-Customer.Id
 let RegExCusID=/^(C00-)[0-9]{3,4}$/;
 $("#txtCusID").keyup(function () {
+    if($("#txtCusID").val()==''){
+        $("#validationTextId").css('display','none');
+        $("#txtCusID").css('border','1px solid #ced4da');
+        return;
+    }
     let input =$("#txtCusID").val();
     if(RegExCusID.test(input)){
         $("#txtCusID").css('border','2px solid green');
@@ -90,6 +114,11 @@ $("#txtCusID").keyup(function () {
 //Validation-Customer.Name
 let RegExCusName=/^[A-z]{5,10}$/;
 $("#txtCusName").keyup(function () {
+    if($("#txtCusName").val()==''){
+        $("#validationTextName").css('display','none');
+        $("#txtCusName").css('border','1px solid #ced4da');
+        return;
+    }
     let input =$("#txtCusName").val();
     if(RegExCusName.test(input)){
         $("#txtCusName").css('border','2px solid green');
@@ -104,6 +133,11 @@ $("#txtCusName").keyup(function () {
 //Validation-Customer.address
 let RegExCusAddress=/^(No.)[0-9]{2} [A-z]{4,100}$/;
 $("#txtCusAddress").keyup(function () {
+    if($("#txtCusAddress").val()==''){
+        $("#validationTextAddress").css('display','none');
+        $("#txtCusAddress").css('border','1px solid #ced4da');
+        return;
+    }
     let input =$("#txtCusAddress").val();
     if(RegExCusAddress.test(input)){
         $("#txtCusAddress").css('border','2px solid green');
@@ -118,6 +152,11 @@ $("#txtCusAddress").keyup(function () {
 //Validation-Customer.TP
 let RegExCusTP=/^(07)[0-9]{8,9}$/;
 $("#txtCusTP").keyup(function () {
+    if($("#txtCusTP").val()==''){
+        $("#validationTextTp").css('display','none');
+        $("#txtCusTP").css('border','1px solid #ced4da');
+        return;
+    }
     let input =$("#txtCusTP").val();
     if(RegExCusTP.test(input)){
         $("#txtCusTP").css('border','2px solid green');
@@ -128,3 +167,4 @@ $("#txtCusTP").keyup(function () {
         $("#validationTextTp").css('display','block');
     }
 });
+
