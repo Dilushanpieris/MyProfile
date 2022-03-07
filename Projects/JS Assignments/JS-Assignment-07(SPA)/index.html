@@ -119,7 +119,6 @@
     <div class="alert alert-secondary" role="alert">
         <i class="fas fa-shopping-cart"></i> Item
     </div>
-
     <section class="container-fluid mt-3">
         <section class="row mt-3 justify-content-around">
             <div class="col-12 col-md-4">
@@ -127,9 +126,9 @@
                     <h1 class="h1 mb-3">Item Manage</h1>
                     <div class="mb-3">
                         <label class="form-label" for="srcCusID">Search Item</label>
-                        <input class="form-control" id="srcCusID1" placeholder="Customer ID, NIC, Name" type="text">
+                        <input class="form-control" id="srcItemProperty" placeholder="Customer ID, NIC, Name" type="text">
                     </div>
-                    <button class="btn btn-primary">Search</button>
+                    <button class="btn btn-primary" id="btnItemSearch">Search</button>
                     <button class="btn btn-danger" id="itemDelete">Delete</button>
                     <button class="btn btn-success" id="itemSaveOrUpdate">Save or Update</button>
                 </div>
@@ -385,8 +384,10 @@
 <script src="Controller/CustomerController.js"></script>
 <!--Customer Model-->
 <script src="Model/Customer.js"></script>
-
-
+<!--Item Controller-->
+<script src="Controller/ItemController.js"></script>
+<!--Item Model-->
+<script src="Model/Item.js"></script>
 
 <script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
 </body>
