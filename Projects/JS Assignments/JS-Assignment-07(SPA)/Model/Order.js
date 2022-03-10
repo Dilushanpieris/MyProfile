@@ -1,7 +1,7 @@
-function Customer(id,date,custID,ItemCode,Qty,price) {
-    var __Oid=id;
-    var __Odate=date;
-    var __OcustID=custID;
+function Customer(oid,odate,OcustID,price) {
+    var __Oid=oid;
+    var __Odate=odate;
+    var __OcustID=OcustID;
     var __OPrice=price;
 
     this.getOrderId=function () {
