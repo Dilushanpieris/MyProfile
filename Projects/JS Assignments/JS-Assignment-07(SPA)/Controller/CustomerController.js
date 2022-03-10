@@ -7,6 +7,11 @@ $("#btnSaveOrUpdate").click(function () {
     let customerName = $("#txtCusName").val();
     let customerAddress = $("#txtCusAddress").val();
     let customerTP = $("#txtCusTP").val();
+    let nullVal='';
+    if(customerID==nullVal||customerName==nullVal||customerAddress==nullVal||customerTP==nullVal){
+        alert("warning-Please Input Data Correctly To Continue..");
+        return;
+    }
     let index=isExists(customerID);
     if(index!=-1){
         alert("Customer Updated");
@@ -22,6 +27,7 @@ $("#btnSaveOrUpdate").click(function () {
     customer.push(c1);
     loadAllCustomers();
     bindEvent();
+    clearFieldsCus();
 });
 
 //Search Function Search bar..
@@ -48,11 +54,19 @@ $("#btnDelete").click(function () {
         customer.splice(index,1);
         loadAllCustomers();
         alert("Customer "+customerID+" Deleted");
+        clearFieldsCus();
         return;
     }
     alert("No Customer Found");
 });
 
+function clearFieldsCus() {
+    $("#txtCusID").val('');
+    $("#txtCusName").val('');
+    $("#txtCusAddress").val('');
+    $("#txtCusTP").val('');
+    $("#srcCusID").val('');
+}
 
 function isExists(id,address){
     let x=-1;
