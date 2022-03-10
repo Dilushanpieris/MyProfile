@@ -18,4 +18,8 @@ $("#OrdersBtn").click(function () {
     $("#ManageItemPage").css("display","none");
     $("#PlaceOrderPage").css("display","block");
 });
-
+//close Btn
+$("#closeBtn").click(function () {
+    alert("Logging Out....")
+    window.close();
+});

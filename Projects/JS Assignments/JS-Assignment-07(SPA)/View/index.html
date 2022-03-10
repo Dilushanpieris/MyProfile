@@ -4,15 +4,15 @@
     <meta charset="UTF-8">
     <title>POS System..</title>
     <meta content="width=device-width, initial-scale=1" name="viewport">
-    <link href="assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="assets/fonts/css/all.css">
-    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-utilities.css">
+    <link href="../assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/fonts/css/all.css">
+    <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap-utilities.css">
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
         <a class="navbar-brand" href="#">
-            <img src="assets/img/home-icon.png" alt="" width="30" height="24" class="d-inline-block align-text-top">
+            <img src="../assets/img/home-icon.png" alt="" width="30" height="24" class="d-inline-block align-text-top">
             POS System
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
@@ -22,13 +22,14 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#" id="HomeBtn">Home</a>
+                    <a class="nav-link active" aria-current="page" href="#" id="HomeBtn">Customer</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#" id="ItemsBtn">Items</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#" id="OrdersBtn">Orders</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#" id="ItemsBtn">Items</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
@@ -36,8 +37,7 @@
                         Others
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" href="#">Pricing</a></li>
-                        <li><a class="dropdown-item" href="#">Services</a></li>
+                        <li><a class="dropdown-item" href="#">Order Status</a></li>
                         <li>
                             <hr class="dropdown-divider">
                         </li>
@@ -47,8 +47,7 @@
             </ul>
         </div>
         <form class="d-flex">
-            <button type="button" class="btn btn-outline-light me-2"><i class="fas fa-user-plus"></i> Sign Up</button>
-            <button type="button" class="btn btn-outline-light "><i class="fas fa-sign-in-alt"></i> Log Out</button>
+            <button type="button" class="btn btn-outline-light " id="closeBtn"><i class="fas fa-sign-in-alt"></i> Exit</button>
         </form>
     </div>
 </nav>
@@ -195,39 +194,40 @@
                         <div class="col">
                             <caption>Order ID:</caption>
                             <form>
-                                <input class="form-control " type="text">
+                                <input class="form-control " id="txtOrderId" type="text" placeholder="Format: O00-001">
                             </form>
                         </div>
                         <div class="col">
                             <caption>Order Date:</caption>
                             <form>
-                                <input class="form-control " type="text">
+                                <input class="form-control " type="text" id="txtOrderDate" placeholder="Format: 2020-12-12">
                             </form>
                         </div>
 
                     </div>
+                    <hr>
                     <!--Row 02-->
                     <div class="row">
                         <div class="col">
                             <caption>Customer_ID:</caption>
                             <form>
-                                <input class="form-control " type="text">
+                                <input class="form-control " type="text" id="txtCusIDForSearch" placeholder="Format: C00-001">
                             </form>
                         </div>
-
                     </div>
+
                     <!--Row 03-->
                     <div class="row">
                         <div class="col">
                             <caption>Name:</caption>
                             <form>
-                                <input class="form-control " type="text">
+                                <input class="form-control " type="text" disabled id="txtCusNameResult">
                             </form>
                         </div>
                         <div class="col">
                             <caption>Salary:</caption>
                             <form>
-                                <input class="form-control " type="text">
+                                <input class="form-control " type="text" disabled id="txtCusSalaryResult">
                             </form>
                         </div>
 
@@ -237,10 +237,12 @@
                         <div class="col">
                             <caption>Address:</caption>
                             <form>
-                                <input class="form-control " type="text">
+                                <input class="form-control " type="text" disabled id="txtCusAddressResult">
+                                <button class="btn btn-warning mt-4" id="btnSearchCus">Search Customer</button>
                             </form>
                         </div>
                     </div>
+
                 </section>
             </div>
 
@@ -255,7 +257,7 @@
                         <div class="col">
                             <caption>Item Code:</caption>
                             <form>
-                                <input class="form-control " type="text">
+                                <input class="form-control " type="text" placeholder="Format:I00-001" id="txtItemCodeForSearch">
                             </form>
                         </div>
                     </div>
@@ -265,19 +267,19 @@
                         <div class="col">
                             <caption>Item Name:</caption>
                             <form>
-                                <input class="form-control " type="text">
+                                <input class="form-control" disabled type="text" id="txtItemNameResult">
                             </form>
                         </div>
                         <div class="col">
                             <caption>Item Price:</caption>
                             <form>
-                                <input class="form-control " type="text">
+                                <input class="form-control " type="text" id="txtItemPriceResult" disabled>
                             </form>
                         </div>
                         <div class="col">
                             <caption>QtyOnH:</caption>
                             <form>
-                                <input class="form-control " type="text">
+                                <input class="form-control " type="text" id="txtItemQtyResult" disabled>
                             </form>
                         </div>
 
@@ -288,7 +290,7 @@
                         <div class="col">
                             <caption>Order QTY:</caption>
                             <form>
-                                <input class="form-control " type="text">
+                                <input class="form-control " type="text" placeholder="Format: 20" id="txtQtyForAdd">
                             </form>
                         </div>
                     </div>
@@ -296,7 +298,8 @@
                     <!--Row 04-->
                     <div class="row">
                         <div class="col">
-                            <button class="btn btn-danger mt-4">Add Item</button>
+                            <button class="btn btn-dark mt-4" id="btnSearchItem">Search Item</button>
+                            <button class="btn btn-danger mt-4" id="btnAddItem">Add Item</button>
                         </div>
                     </div>
                 </section>
@@ -305,8 +308,9 @@
 
             <!--       Col 1 As Price Total-->
             <div class="col bg-white m-4 pb-4">
-                <h4 class="text-primary">Total: 1050Rs./=</h4>
-                <h4 class="text-danger">Sub Total: 945Rs./=</h4>
+                <h4 class="text-primary" id="txtDisplayTotal">Total: Rs.0.00/=</h4>
+                <h4 class="text-danger" id="txtDisplaySubTotal">Sub Total: Rs.0.00/=</h4>
+                <hr>
                 <!-- Internal Grid-->
                 <section class="container">
                     <!--Row 01-->
@@ -314,13 +318,13 @@
                         <div class="col">
                             <caption>Cash:</caption>
                             <form>
-                                <input class="form-control " type="text">
+                                <input class="form-control " type="text" id="txtGivenCash" placeholder="Format: 2500.00">
                             </form>
                         </div>
                         <div class="col">
                             <caption>Discount:</caption>
                             <form>
-                                <input class="form-control " type="text">
+                                <input class="form-control " type="text" id="txtDiscount" placeholder="Format: 10%">
                             </form>
                         </div>
                     </div>
@@ -331,7 +335,7 @@
                         <div CLASS="col">
                             <caption>Balance:</caption>
                             <form>
-                                <input class="form-control " type="text">
+                                <input class="form-control " type="text" id="txtIdBalance" disabled>
                             </form>
                         </div>
                     </div>
@@ -339,62 +343,51 @@
                     <!--Row 03-->
                     <div class="row">
                         <div class="col">
-                            <button class="btn btn-success mt-4">Purchase</button>
+                            <button class="btn btn-success mt-4" id="btnPurchase">Purchase</button>
                         </div>
                     </div>
                 </section>
             </div>
         </section>
         <!-- ####################  -->
-
         <!--Table Row-->
         <section class="row p-3 mb-5">
             <div class="col">
                 <table class="table">
                     <thead class="table-dark">
                     <tr>
-                        <th scope="col">Customer Name</th>
-                        <th scope="col">Age</th>
-                        <th scope="col">Telephone</th>
-                        <th scope="col">Salary</th>
-                        <th scope="col">Salary</th>
+                        <th scope="col">Item Code</th>
+                        <th scope="col">Item Name</th>
+                        <th scope="col">Price</th>
+                        <th scope="col">Qty</th>
+                        <th scope="col">Total For Item.</th>
                     </tr>
                     </thead>
-                    <tbody>
-                    <tr>
-                        <th scope="row">Kamal</th>
-                        <td>23</td>
-                        <td>071234567</td>
-                        <td>35,000</td>
-                        <td>35,000</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">Nimal</th>
-                        <td>35</td>
-                        <td>089767776</td>
-                        <td>40,000</td>
-                        <td>35,000</td>
-                    </tr>
+                    <tbody id="itemTableForViewOnOrder">
+
                     </tbody>
                 </table>
             </div>
         </section>
     </section>
 </section>
-<script src="assets/JQuery/jquery-3.6.0.min.js"></script>
+<script src="../assets/JQuery/jquery-3.6.0.min.js"></script>
 <!--DB-->
-<script src="db/Database.js"></script>
+<script src="../db/Database.js"></script>
 <!--Page Switch Controller..-->
-<script src="Controller/CommonController.js"></script>
+<script src="../Controller/CommonController.js"></script>
 <!--Customer Page Controller-->
-<script src="Controller/CustomerController.js"></script>
+<script src="../Controller/CustomerController.js"></script>
 <!--Customer Model-->
-<script src="Model/Customer.js"></script>
+<script src="../Model/Customer.js"></script>
 <!--Item Controller-->
-<script src="Controller/ItemController.js"></script>
+<script src="../Controller/ItemController.js"></script>
 <!--Item Model-->
-<script src="Model/Item.js"></script>
-
-<script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="../Model/Item.js"></script>
+<!--Order Controller-->
+<script src="../Controller/OrderController.js"></script>
+<!--Order Model-->
+<script src="../Model/Order.js"></script>
+<script src="../assets/bootstrap/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
