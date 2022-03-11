@@ -21,5 +21,6 @@ $("#OrdersBtn").click(function () {
 //close Btn
 $("#closeBtn").click(function () {
     alert("Logging Out....")
-    window.close();
+    let new_window = open(location, '_self');
+    new_window.close();
 });

@@ -17,6 +17,7 @@ $("#btnSearchItem").click(function () {
 });
 //Fill Table With Items..
 let tempTotal=0;
+let tempSubTotal=0;
 $("#btnAddItem").click(function () {
     //Logic For Add Item To Table.
     let ItemTot=$("#txtItemPriceResult").val() * $("#txtQtyForAdd").val();
@@ -24,8 +25,71 @@ $("#btnAddItem").click(function () {
     let rowItem = `<tr><td>${$("#txtItemCodeForSearch").val()}</td><td>${$("#txtItemNameResult").val()}</td><td>${$("#txtItemPriceResult").val()}</td><td>${$("#txtQtyForAdd").val()}</td><td>${ItemTot}</td></tr>`;
     $("#itemTableForViewOnOrder").append(rowItem);
     $("#txtDisplayTotal").text('Total: '+tempTotal+'/=');
+    let newQtyForDb=$("#txtItemQtyResult").val()-$("#txtQtyForAdd").val();
+    $("#txtItemQtyResult").val(newQtyForDb);
+    let indexForReduce=isItemExists($("#txtItemCodeForSearch").val());
+    if(indexForReduce!=-1){
+        item[indexForReduce].setItemQty(newQtyForDb);
+        loadAllItem();
+        bindEventItemTable()
+        return;
+    }
+});
+//Purchase Btn
+$("#btnPurchase").click(function () {
+    if($("#txtOrderId").val()!=''&&$("#txtOrderDate").val()!=''&&$("#txtCusIDForSearch").val()!=''&&$("#txtItemCodeForSearch").val()!=''&&$("#txtGivenCash").val()!=''){
+        let OrderIDdb=$("#txtOrderId").val();
+        let OrderDatedb=$("#txtOrderDate").val();
+        let OrderCustID=$("#txtCusIDForSearch").val();
+        let OrderPrice=tempSubTotal;
+        if(isOrderExists(OrderIDdb)){
+            alert("Order_ID Already Exists");
+            return;
+        }
+        //adding to DB
+        if (confirm("Confirm Order For:"+OrderCustID+" Order Price: "+tempSubTotal+"/=")) {
+            let o1=new Order(OrderIDdb,OrderDatedb,OrderCustID,OrderPrice);
+            order.push(o1);
+        } else {
+           alert("Order Dismissed");
+           return;
+        }
+    }
+    else{
+        alert("Please Insert Correct Data..");
+        return;
+    }
+});
+$("#btnRefresh").click(function () {
+    newOrder();
 });
 
+function isOrderExists(o_id){
+    for(let i=0;i<order.length;i++) {
+        if(order[i].getOrderId()==o_id){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+}
+function newOrder() {
+    $("#itemTableForViewOnOrder>tr").remove();
+    $("#txtOrderId").val('');
+    $("#txtOrderDate").val('');
+    $("#txtCusIDForSearch").val('');
+    $("#txtCusNameResult").val('');
+    $("#txtCusAddressResult").val('');
+    $("#txtCusSalaryResult").val('');
+    $("#txtItemCodeForSearch").val('');
+    $("#txtItemNameResult").val('');
+    $("#txtItemQtyResult").val('');
+    $("#txtItemPriceResult").val('');
+    $("#txtGivenCash").val('');
+    $("#txtDiscount").val('');
+    $("#txtIdBalance").val('');
+}
 function serchItemById(Itid) {
     for(let i=0;i<item.length;i++){
         if(item[i].getItemCode()==Itid){
@@ -121,41 +185,49 @@ $("#txtQtyForAdd").keyup(function () {
     if($("#txtQtyForAdd").val()==''){
         $("#txtQtyForAdd").css('border','1px solid #ced4da');
         $("#btnAddItem").css('cursor','not-allowed');
+        $("#btnAddItem").css('pointer-events','none');
         return;
     }
-    if($("#txtItemQtyResult").val()<$("#txtQtyForAdd").val()){
+    if($("#txtQtyForAdd").val()>$("#txtItemQtyResult").val()){
         $("#txtQtyForAdd").css('border','2px solid red');
         $("#btnAddItem").css('cursor','not-allowed');
+        $("#btnAddItem").css('pointer-events','none');
+        return;
     }
     let input =$("#txtQtyForAdd").val();
     if(RegExQtyForOrder.test(input)){
         $("#txtQtyForAdd").css('border','2px solid green');
         $("#btnAddItem").css('cursor','pointer');
+        $("#btnAddItem").css('pointer-events','auto');
     }
     else{
         $("#txtQtyForAdd").css('border','2px solid red');
         $("#btnAddItem").css('cursor','not-allowed');
+        $("#btnAddItem").css('pointer-events','none');
     }
 });
 
 //Validation Order.cash
-let RegExCashForOrder=/^[0-9]{2,9}|(.)[0-9]{2}$/;
+let RegExCashForOrder=/^[0-9]{1,9}|.([0-9]{2})$/;
 $("#txtGivenCash").keyup(function () {
     if($("#txtGivenCash").val()==''){
         $("#txtGivenCash").css('border','1px solid #ced4da');
+        $("#txtDiscount").attr('disabled','disabled');
         return;
     }
     let input =$("#txtGivenCash").val();
     if(RegExCashForOrder.test(input)){
         $("#txtGivenCash").css('border','2px solid green');
+        $("#txtDiscount").removeAttr('disabled');
     }
     else{
         $("#txtGivenCash").css('border','2px solid red');
+        $("#txtDiscount").attr('disabled','disabled');
     }
 });
 
 //Validation Order.Discount
-let RegExDiscountTxt=/^[0-9]{2}|(.)[0-9]{1,2}$/;
+let RegExDiscountTxt=/^[0-9]{1,2}|(.)[0-9]{1,2}$/;
 $("#txtDiscount").keyup(function () {
     if($("#txtDiscount").val()==''){
         $("#txtDiscount").css('border','1px solid #ced4da');
@@ -164,6 +236,12 @@ $("#txtDiscount").keyup(function () {
     let input =$("#txtDiscount").val();
     if(RegExDiscountTxt.test(input)){
         $("#txtDiscount").css('border','2px solid green');
+        let discount=100-$("#txtDiscount").val();
+        let subTotal=tempTotal*(discount/100);
+        tempSubTotal=subTotal;
+        $("#txtDisplaySubTotal").text('Sub Total: '+subTotal+'/=');
+        let balance=$("#txtGivenCash").val()-subTotal;
+        $("#txtIdBalance").val(balance);
     }
     else{
         $("#txtDiscount").css('border','2px solid red');

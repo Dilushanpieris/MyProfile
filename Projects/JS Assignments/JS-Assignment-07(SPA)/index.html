@@ -225,7 +225,7 @@
                             </form>
                         </div>
                         <div class="col">
-                            <caption>Salary:</caption>
+                            <caption>Telephone:</caption>
                             <form>
                                 <input class="form-control " type="text" disabled id="txtCusSalaryResult">
                             </form>
@@ -240,6 +240,9 @@
                                 <input class="form-control " type="text" disabled id="txtCusAddressResult">
                                 <button class="btn btn-warning mt-4" id="btnSearchCus">Search Customer</button>
                             </form>
+                        </div>
+                        <div class="col">
+                            <button class="btn btn-success mt-4" id="btnRefresh">New Order(Clear)</button>
                         </div>
                     </div>
 
@@ -308,8 +311,8 @@
 
             <!--       Col 1 As Price Total-->
             <div class="col bg-white m-4 pb-4">
-                <h4 class="text-primary" id="txtDisplayTotal">Total: Rs.0.00/=</h4>
-                <h4 class="text-danger" id="txtDisplaySubTotal">Sub Total: Rs.0.00/=</h4>
+                <h4 class="text-danger" id="txtDisplayTotal">Total: Rs.0.00/=</h4>
+                <h4 class="text-primary" id="txtDisplaySubTotal">Sub Total: Rs.0.00/=</h4>
                 <hr>
                 <!-- Internal Grid-->
                 <section class="container">
@@ -324,7 +327,7 @@
                         <div class="col">
                             <caption>Discount:</caption>
                             <form>
-                                <input class="form-control " type="text" id="txtDiscount" placeholder="Format: 10%">
+                                <input class="form-control " type="text" id="txtDiscount" placeholder="Format: 10%" disabled>
                             </form>
                         </div>
                     </div>

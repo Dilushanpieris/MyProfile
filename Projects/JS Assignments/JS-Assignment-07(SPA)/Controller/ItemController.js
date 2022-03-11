@@ -193,7 +193,7 @@ $("#txtItemQty").keyup(function () {
 let RegExItemPrice=/^[0-9]{1,9}(.)[0-9]{2}$/;
 $("#txtItemPrice").keyup(function () {
     if($("#txtItemPrice").val()==''){
-        $("#validationTextItemQty").css('display','none');
+        $("#validationTextItemPrice").css('display','none');
         $("#txtItemPrice").css('border','1px solid #ced4da');
         return;
     }
@@ -204,6 +204,6 @@ $("#txtItemPrice").keyup(function () {
     }
     else{
         $("#txtItemPrice").css('border','2px solid red');
-        $("#validationTextItemQty").css('display','block');
+        $("#validationTextItemPrice").css('display','block');
     }
 });

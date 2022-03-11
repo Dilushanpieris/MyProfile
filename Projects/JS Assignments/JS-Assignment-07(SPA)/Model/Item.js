@@ -22,10 +22,10 @@ function Item(code,name,qty,price) {
     this.setItemName=function (name) {
         __name=name;
     }
-    this.setItemQty=function (address) {
-        __qty=address;
+    this.setItemQty=function (qty) {
+        __qty=qty;
     }
-    this.setItemPrice=function (telephone){
-        __price=telephone;
+    this.setItemPrice=function (price){
+        __price=price;
     }
 }
